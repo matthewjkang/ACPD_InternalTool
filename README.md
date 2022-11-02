@@ -9,7 +9,7 @@ and goals listed on the quarterly reports. This clearly was going to take a lot 
 
 The program can be split into three parts. 
 
-Part 1 
+### Part 1 
 Scrape the webpage, and extract its contents into an excel spreadshet. 
 
 Part 2 
