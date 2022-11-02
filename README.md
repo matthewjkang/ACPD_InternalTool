@@ -19,3 +19,5 @@ By now, you should have two spreadsheets. One with the contents of the website, 
 Algorithmically find discrepancies between the two. 
 I am here. 
 
+### Usage
+After completion, I will be sure to write very detailed instructions on how to use this tool. 
