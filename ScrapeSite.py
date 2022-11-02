@@ -54,5 +54,5 @@ web = pd.DataFrame(
     }
 )
 
-# Export it as a CSV / Excel Sheet
-web.to_excel('WebsiteContents.xlsx',index=False)
+# Export it as an Excel Sheet
+# web.to_excel('WebsiteContents.xlsx',index=False)

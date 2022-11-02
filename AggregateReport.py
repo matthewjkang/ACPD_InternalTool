@@ -77,7 +77,6 @@ def create_excel(path): # This function will create a pandas dataframe from an e
     end = temp
 
     # CREATE YOUR DATAFRAME
-
         # Create a regex expression that matches name of the excel spreadsheet.
         # Used to create the DEPT column of the dataframe
     match = re.search(r'.*?\\(.*)\..*', path).group(1) # Match any substring that is between "\" and "."
@@ -94,10 +93,6 @@ def create_excel(path): # This function will create a pandas dataframe from an e
     )
     return df
 
-# pd.set_option('display.max_rows', 500)
-# pd.set_option('display.max_columns', 500)
-# pd.set_option('display.width', 1000)
-
 adm = create_excel(adm_path)
 afs = create_excel(afs_path)
 jfs = create_excel(jfs_path)
@@ -106,4 +101,5 @@ jfac = create_excel(jfac_path)
 # Merge all 4 into one
 agg = pd.concat([adm,afs,jfac,jfs],ignore_index=True)
 
+# Create Excel Spreadsheet
 agg.to_excel('AggregatedReports.xlsx', index=False)
