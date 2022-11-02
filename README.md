@@ -12,7 +12,7 @@ The program can be split into three parts.
 ### Part 1 
 Scrape the webpage, and extract its contents into an excel spreadshet. 
 
-Part 2 
+#### Part 2 
 Aggregate all 4 quarterly reports into one excel spreadsheet. 
 
 By now, you should have two spreadsheets. One with the contents of the website, and another with the contents of the quarterly reports. 
