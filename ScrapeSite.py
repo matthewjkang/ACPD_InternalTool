@@ -57,5 +57,9 @@ web = pd.DataFrame(
     }
 )
 
+import os
+if not os.path.exists('Sheets'):
+    os.makedirs('Sheets')
+
 # Export it as an Excel Sheet
-# web.to_excel('WebsiteContents.xlsx',index=False)
+web.to_excel(os.path.join('Sheets', 'WebsiteContents.xlsx'),index=False)

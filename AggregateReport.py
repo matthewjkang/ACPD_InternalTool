@@ -112,5 +112,10 @@ agg = pd.concat([adm,afs,jfac,jfs],ignore_index=True)
 
 agg = agg.sort_values(by=['GOAL','OBJECTIVE','DEPT'])
 
+
+import os
+if not os.path.exists('Sheets'):
+    os.makedirs('Sheets')
+    
 # Create Excel Spreadsheet
-# agg.to_excel('AggregatedReports.xlsx', index=False)
+agg.to_excel(os.path.join('Sheets', "AggregatedReports.xlsx"), index=False)
