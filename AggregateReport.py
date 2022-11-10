@@ -25,6 +25,8 @@ def create_excel(path): # This function will create a pandas dataframe from an e
             real_rows.append(0)
 
     # ITERATE THROUGH A NUMERICAL RANGE AND APPEND INTO YOUR LIST IF THE ROW IS VALID
+    goal = []
+    obj = []
     tasks = []
     start = []
     end = []
@@ -33,7 +35,13 @@ def create_excel(path): # This function will create a pandas dataframe from an e
     for i in range(len(real_rows)):
         if real_rows[i]:
 
-            single_task = sh['D'][i].value
+            this_goal = sh['B'][i].value
+            goal.append(this_goal)
+
+            this_obj = sh['C'][i].value
+            obj.append(this_obj)
+
+            single_task = sh['D'][i].value.strip()
             tasks.append(single_task)
 
             start_date = sh['F'][i].value
@@ -51,8 +59,7 @@ def create_excel(path): # This function will create a pandas dataframe from an e
 
             stat = sh['L'][i].value
             status.append(stat)
-
-    completion = [str(i.count('FF0070C0')*25)+"%" for i in completion] #Here, we are turning the completion tuple into a string, representing percentage
+    completion = [str((i.count('FF0070C0')+i.count(4))*25)+"%" for i in completion] #Here, we are turning the completion tuple into a string, representing percentage
 
     # EXTRACT THE ACTUAL START DATE FROM THE LIST OF PREVIOUS AND CURRENT START DATES
     temp = []
@@ -83,6 +90,8 @@ def create_excel(path): # This function will create a pandas dataframe from an e
 
     df = pd.DataFrame(
         {
+            'GOAL':goal,
+            'OBJECTIVE':obj,
             'DEPT':[match]*len(tasks),
             'TASK':tasks,
             'START':start,
@@ -101,5 +110,7 @@ jfac = create_excel(jfac_path)
 # Merge all 4 into one
 agg = pd.concat([adm,afs,jfac,jfs],ignore_index=True)
 
+agg = agg.sort_values(by=['GOAL','OBJECTIVE','DEPT'])
+
 # Create Excel Spreadsheet
-agg.to_excel('AggregatedReports.xlsx', index=False)
+# agg.to_excel('AggregatedReports.xlsx', index=False)

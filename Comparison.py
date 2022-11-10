@@ -1,21 +1,27 @@
 from AggregateReport import agg
 from ScrapeSite import web
+import pandas as pd
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
 
-# col_web = [i[0:20] for i in web['TASK']]
-# col_agg = [i[0:20] for i in agg['TASK']]
+aggFlat = agg.values.tolist()
+webFlat = web.values.tolist()
 
-# onWeb_notOnReports = []
-# for i in col_web:
-#     if i not in col_agg:
-#         onWeb_notOnReports.append(i)
+for i in webFlat:
+    temp = i[0]+" "+i[1]
+    i.pop(0)
+    i.pop(0)
+    i.insert(0,temp)
 
-# print(onWeb_notOnReports)
+for i in aggFlat:
+    temp = i[2]+" "+i[3]
+    i.pop(2)
+    i.pop(2)
+    i.insert(2,temp)
 
-# onRep_NotOnWeb = []
-# for i in col_agg:
-#     if i not in col_web:
-#         onRep_NotOnWeb.append(i)
+aggdf = pd.DataFrame(aggFlat, columns = ['GOAL','OBJ','ID', 'START','END','COMPLETION','STATUS'])
+webdf = pd.DataFrame(webFlat, columns = ['ID', 'START','END','COMPLETION','STATUS'])
 
-# print(onRep_NotOnWeb)
-
-print(web)
+asdf = pd.merge(webdf,aggdf,on='ID',suffixes=(' (Website)', ' (Reports)'), how='left')
+print(asdf)

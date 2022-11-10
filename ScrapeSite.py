@@ -13,7 +13,10 @@ departmentSoup = soup.findAll('div', attrs = {'division col-8 col-md-1 col-lg-1'
 department = []
 for i in departmentSoup:
     if i.find("abbr"):
-        department.append(i.find("abbr").text)
+        if '-' in i.find('abbr').text:
+            department.append(i.find("abbr").text[:-1])
+        else:
+            department.append(i.find("abbr").text.strip())
 
 # CREATE TASK LIST
 taskSoup = soup.findAll('div',attrs = {'class':"task col-12 col-md-4 col-lg-5"} ) 
