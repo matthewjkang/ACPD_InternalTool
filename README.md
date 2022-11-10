@@ -17,7 +17,10 @@ By now, you should have two spreadsheets. One with the contents of the website, 
 
 #### Part 3 
 Algorithmically find discrepancies between the two. 
-I am here. 
+Create a Spreadsheet that shows all the tasks that are on the website, but not on the quarterly reports. (Or the wording has changed)
+Create a Spreadsheet that shows all the tasks that are on the quarterly reports, but not on the spreadsheet. (Or the wording has changed)
+Create a Spreadsheet that tracks all the tasks that have a mismatch in end date.
+Create a Spreadsheet that tracks all the tasks that have a mismatch in completion.
 
 ### Usage
 After completion, I will be sure to write very detailed instructions on how to use this tool. 
