@@ -22,5 +22,4 @@ Create a Spreadsheet that shows all the tasks that are on the quarterly reports,
 Create a Spreadsheet that tracks all the tasks that have a mismatch in end date.
 Create a Spreadsheet that tracks all the tasks that have a mismatch in completion.
 
-### Usage
-After completion, I will be sure to write very detailed instructions on how to use this tool. 
+
