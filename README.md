@@ -1,7 +1,7 @@
 # ACPD Internal Tool 
 ## Tracker for finding Discrepancies between County WebPage and Quarterly Reports
 
-My first week as an intern with the Alameda County Probation Department, I was tasked with tracking discrepancies between the goals listed on the website, 
+My first week with the Alameda County Probation Department, I was tasked with tracking discrepancies between the goals listed on the website, 
 https://probation.acgov.org/strategic-plan/goals-and-objectives.page
 and goals listed on the quarterly reports. This clearly was going to take a lot of time, and my immediate reaction was to automate this using the BS4 and Pandas libraries in Python. 
 
